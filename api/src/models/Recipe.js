@@ -31,14 +31,14 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
         steps: {
-            type: DataTypes.ARRAY(DataTypes.JSON),
+            type: DataTypes.TEXT,
         },
         score: {
             type: DataTypes.INTEGER,
             allowNull: true,
             validate: {
                 min: 0,
-                max: 10, 
+                max: 100, 
             }
         },
         createdInDB: {
