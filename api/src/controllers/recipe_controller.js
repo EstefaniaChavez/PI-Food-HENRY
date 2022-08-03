@@ -22,7 +22,7 @@ const getDBData = async () => {
             summary: e.summary,
             healthScore: e.healthScore,
             image: e.image,
-            // steps: e.steps,
+            steps: e.steps,
             score: e.score,
             diets: e.diets,
         }
@@ -158,9 +158,11 @@ const deleteRecipe = async (req, res) => {
     }
 } catch(error) {
     res.status(400).send('Bad request')
-}
+}}
 
-
+//FILTRO RECIPES: 
+const filterRecipes = async (req, res) => {
+    
 }
 
 module.exports = {

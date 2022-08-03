@@ -12,5 +12,6 @@ router.get('/', nameRecipe)
 router.get('/:id', idRecipe)
 router.post('/', recipesCreate) 
 router.delete('/:id', deleteRecipe)
+router.get('/filter/:dietName', ) 
 
 module.exports = router;
