@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
         summary: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
         healthScore: {
@@ -40,6 +40,10 @@ module.exports = (sequelize) => {
                 min: 0,
                 max: 100, 
             }
+        },
+        dishTypes:{
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: true, 
         },
         createdInDB: {
             type: DataTypes.BOOLEAN, 

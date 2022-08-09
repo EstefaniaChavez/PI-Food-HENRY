@@ -1,0 +1,49 @@
+.containerppal{
+    /* background-color: #fce3d1; */
+    width: 100%;
+    height: 100vh;
+    padding: 0px;
+    margin-top: 0px;
+}
+.buttonlanding{
+    border: 4px white solid; 
+    background-color: #D67D3E;
+    transition: background-color 0.40s;
+    font-family: 'Lucida Handwriting';
+    color: black; 
+    border-radius: 15px;
+    border-color: #813905;
+    align-items: center;
+    height: 80px; 
+    width: 160px; 
+    font-size: 25px;
+    font-weight: 600;
+    cursor:pointer; 
+    margin-top: 80px;
+}
+
+.buttonlanding:hover{
+    background: #4e2303;
+    color:#D67D3E;
+    transform: scale(1.1);
+}
+.fontconteiner{
+    display: flex;
+    width: 100%;
+}
+.taste{
+    font-family: 'Edwardian Script ITC', Courier;
+    font-size: 120px;
+    margin-top: 0px;
+    padding-top: 0px;
+    font-weight: 500; 
+    -webkit-text-stroke: 2px #813905;
+}
+
+.henry{
+    font-family: 'Perpetua Titling MT', 'Gill Sans';
+    margin-bottom: 0px;
+    font-size: 40px;
+    font-weight: 500;
+    padding-top: 30px;
+}

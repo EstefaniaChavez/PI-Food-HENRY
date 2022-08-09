@@ -1,0 +1,31 @@
+.buttonsearch{
+    border: 3px black solid;
+    background-color: #470D21;
+    transition: background-color 0.40s;
+    border-radius: 5px;
+    cursor: pointer;
+    color: beige;
+    margin-right: 10px; 
+    height: 30px;
+    width: 80px;
+    font-family: 'Bahnschrisft';
+    font-size: 13px; 
+}
+
+.buttonsearch:hover{
+    background-color: #9C0F48;
+    color:black;
+    transform: scale(1.1);
+}
+.recipiente{
+    height: 26px;
+    width: 50%;
+    border-radius: 5px;
+    font-family: 'Bahnschrisft';
+    font-size: 20px;
+}
+
+.contenedor{
+    display: flex; 
+    justify-content: center; 
+} 

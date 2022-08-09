@@ -1,0 +1,63 @@
+.buttonvolver{
+        border: 3px black solid;
+        background-color: #470D21;
+        transition: background-color 0.40s;
+        border-radius: 5px;
+        cursor: pointer;
+        color: beige;
+        margin-left: 1260px;
+        margin-top: 10px;
+        height: 40px;
+        width: 80px;
+        font-family: 'Century Schoolbook'; 
+    }
+.buttonvolver:hover{
+        background-color: #9C0F48;
+        color:black
+}
+.containerbuttonvolver{
+    display: flex;
+    align-items: center;
+}
+
+.containerform{
+
+}
+
+label{
+    font-family: 'Century Schoolbook'; 
+
+}
+
+input{
+    margin: 10px; 
+    width: 180px; 
+    height: 20px
+}
+
+.titulo{
+    font-size: 35px; 
+    margin-left: 50px;
+    margin-top: 0px;
+    border-top: 0px;
+    font-family: 'Century Schoolbook'; 
+    font-weight: 700; 
+}
+
+.buttoncrear{
+    margin: 20px 30px;
+    width: 200px; 
+    font-family:'Bahnschrisft'; 
+    font-size: 15px; 
+    font-weight: 500;
+    background-color: #e7a16f; 
+
+}
+
+.diets{
+    margin: 20px 30px;
+    width: 200px; 
+    font-family:'Bahnschrisft'; 
+    font-size: 40px; 
+    font-weight: 500; 
+}

@@ -1,0 +1,89 @@
+.contenedorppal{
+    background-color:#fce3d1;
+}
+.containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.h1henry{
+    font-family: 'Perpetua Titling MT', 'Gill Sans';
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-left: 80px;
+    font-size: 35px;
+    font-weight: 500; 
+    /* justify-content: center; */
+}
+.h2taste{
+    font-family: 'Edwardian Script ITC', Courier;
+    color: black; 
+    font-size: 40px;
+    margin-top: 10px;
+    padding-top: 0px;
+    padding-left: 35px;
+    font-weight: 500; 
+    margin-bottom: 40px;
+    -webkit-text-stroke: 2px #813905;
+}
+.divcontenedor{
+    width: 100%;
+    margin: 20px 20px 
+}
+.crearreceta{
+    text-decoration:'none';
+    color: black; 
+    font-family: 'Book Antiqua';
+    font-weight: 500; 
+    font-size: 20px; 
+    margin-left: 0; 
+    margin-right: px;
+}
+.buttonrecetas{
+    border: 4px white solid; 
+    background-color: #D67D3E;
+    transition: background-color 0.40s;
+    font-family: 'Lucida Handwriting';
+    color: black; 
+    border-radius: 15px;
+    border-color: #813905;
+    align-items: center;
+    height: 40px; 
+    width: 170px; 
+    font-size: 15px;
+    font-weight: 600;
+    cursor:pointer; 
+    margin-top: 10px;
+    margin-left: 62%;
+}
+
+.buttonrecetas:hover{
+    background: #4e2303;
+    color:#D67D3E;
+    transform: scale(1.1);
+
+}
+.contenedorfiltros{
+    display: flex;
+    justify-content: center;
+
+
+}
+.filtroAZ{ 
+    margin: 20px 30px;
+    width: 60px; 
+    font-family:'Bahnschrisft'; 
+    font-size: 20px; 
+    font-weight: 500;
+    background-color: #e7a16f;
+}
+
+.filtrodiets{
+    margin: 20px 30px;
+    width: 200px; 
+    font-family:'Bahnschrisft'; 
+    font-size: 18px; 
+    font-weight: 500;
+    background-color: #e7a16f; 
+}

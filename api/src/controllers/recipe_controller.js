@@ -15,6 +15,7 @@ const getDBData = async () => {
             }
         }
     })
+    console.log('ññññ',dbRecipe);
     return dbRecipe.map(e => {
         return {
             id: e.id,
@@ -22,9 +23,10 @@ const getDBData = async () => {
             summary: e.summary,
             healthScore: e.healthScore,
             image: e.image,
-            steps: e.steps,
+            steps: typeof(e.steps) !== 'string' ? JSON.parse(e.steps) : [],
             score: e.score,
             diets: e.diets,
+            dishTypes: e.dishTypes
         }
     })
     } catch(error){
@@ -35,7 +37,7 @@ const getDBData = async () => {
 //Pedido a la API. 
 const getApiInfo = async () => {
     try {
-        const apiURL = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${APIKEY}&addRecipeInformation=true`)
+        const apiURL = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${APIKEY}&addRecipeInformation=true&number=100`)
         const apiInfo = apiURL.data.results.map(el => {
             return {
                 id: el.id,
@@ -43,8 +45,9 @@ const getApiInfo = async () => {
                 summary: el.summary.replace(/<[^>]*>?/g, ''),
                 healthScore: el.healthScore,
                 image: el.image,
-                // steps: el.analyzedInstructions[0]?.steps ? el.analyzedInstructions[0]?.steps : "Doesn't have steps",
-                score: el.spoonacularScore ? el.spoonacularScore : "Doesn't have scored",
+                dishTypes: el.dishTypes? el.dishTypes : "Does'nt have dishtypes",
+                steps: el.analyzedInstructions[0]?.steps ? JSON.parse(el.analyzedInstructions[0]?.steps) : [],
+                score: el.spoonacularScore ? el.spoonacularScore : 0,
                 diets: el.diets,
             }
         })
@@ -58,8 +61,31 @@ const getApiInfo = async () => {
 //INFO Api y DB 
 const getInfoTotal = async () => { 
     try {
-    const apiInfo = await getApiInfo();
+    // const apiInfo = await getApiInfo();
     const dbInfo = await getDBData();
+
+    // for (let recipe of apiInfo){
+    //     const stepsText = JSON.stringify(recipe.steps)
+    //     const createRecipes = await Recipe.create({
+    //         title: recipe.title,
+    //         summary: recipe.summary,
+    //         score: recipe.score, 
+    //         healthScore: recipe.healthScore,
+    //         dishTypes: recipe.dishTypes,
+    //         steps: stepsText,
+    //         image: recipe.image
+    //     })
+    //     for (let diets of recipe.diets){
+    //         let dietSaved = await Diet.findOne({
+    //             where:{
+    //                 name: diets.toLowerCase()
+    //             }
+    //         })
+    //         await createRecipes.addDiets(dietSaved)
+    //     }
+    // }
+    console.log({dbInfo});
+    return dbInfo
     const infoTotal = apiInfo.concat(dbInfo);
     return infoTotal;
     } catch(error){
@@ -72,7 +98,6 @@ const getInfoTotal = async () => {
 const nameRecipe = async (req, res) => {
     const { name } = req.query;
     const recipe = await getInfoTotal();
-    console.log('recetas', recipe)
     try {
         if (name) {
             let filteredRecipes = recipe.filter(el =>
@@ -123,7 +148,7 @@ const recipesCreate = async (req, res) => {
         const createRecipes = await Recipe.create({
             title,
             summary,
-            score,
+            score, 
             healthScore,
             steps: stepsText,
             image,
@@ -160,10 +185,7 @@ const deleteRecipe = async (req, res) => {
     res.status(400).send('Bad request')
 }}
 
-//FILTRO RECIPES: 
-const filterRecipes = async (req, res) => {
-    
-}
+
 
 module.exports = {
     idRecipe,

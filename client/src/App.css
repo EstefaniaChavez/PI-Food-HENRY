@@ -1,6 +1,27 @@
-.App {
-  text-align: center;
+#root {
+  margin: 0; 
+  padding:0; 
+  border: 0; 
 }
+
+
+.App {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    z-index: 0;
+    margin: 0; 
+    padding:0; 
+    border: 0; 
+    display: block; 
+    height: 100vh;
+    background-image: url("./image/Mi\ proyecto.jpg"); 
+    background-repeat: no-repeat;
+
+    background-color: #fce3d1;
+    text-align: center;
+} 
 
 .App-logo {
   height: 40vmin;
